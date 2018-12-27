@@ -1,6 +1,6 @@
 from util import printer
 from day_one import naming_conventions, modules_classes_etc, conditions, loops_iterators_generators, lambdas_map_filter
-from day_two import by_ref_by_val
+from day_two import by_ref_by_val, slice_notation, python_inheritence
 
 # A module that could be runnable
 if __name__ == '__main__':
@@ -12,11 +12,13 @@ if __name__ == '__main__':
         printer.print_white("(3) conditions")
         printer.print_white("(4) loops, iterators, generators")
         printer.print_white("(5) lambdas, map, filter")
-        printer.print_white("(6) by ref, by val")
+        printer.print_white("(6) slice notation")
+        printer.print_white("(7) by ref, by val")
+        printer.print_white("(8) python inheritance")
         printer.print_white("(0) quit")
 
         selection = input()
-        while selection not in ['1', '2', '3', '4', '5', '6', '0']:
+        while selection not in ['1', '2', '3', '4', '5', '6', '7', '8', '0']:
             printer.print_red(f'{selection} is not an option, try again')
             selection = input()
 
@@ -31,4 +33,8 @@ if __name__ == '__main__':
         elif selection == '5':
             lambdas_map_filter.learn()
         elif selection == '6':
+            slice_notation.learn()
+        elif selection == '7':
             by_ref_by_val.learn()
+        elif selection == '8':
+            python_inheritence.learn()

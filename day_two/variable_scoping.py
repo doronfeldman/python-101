@@ -4,9 +4,6 @@ global_variable = 5
 
 
 def learn():
-    printer.bla += 1
-    printer.print_red(printer.bla)
-
     pass
 
 
@@ -15,8 +12,8 @@ def learn1():
     print(global_variable)  # will print 6
 
 
+learn1()
 print(global_variable)  # will print 5
-
 # --------------------------------------------
 
 another_global_variable = 'Hello!'
