@@ -16,6 +16,7 @@ class Test:
 
     def __init__(self):
         self.instance_variable = 1
+        self._private_instance_variable = 2
 
     def instance_method(self):
         self.instance_variable += 1
@@ -27,6 +28,18 @@ class Test:
     @staticmethod
     def static_method():
         pass
+
+    @property
+    def private_instance_variable(self):
+        return self._private_instance_variable
+
+    @private_instance_variable.setter
+    def private_instance_variable(self, value):
+        self._private_instance_variable = value * 2
+
+    @private_instance_variable.deleter
+    def private_instance_variable(self):
+        del self._private_instance_variable
 
 
 def learn():
@@ -66,3 +79,35 @@ def learn():
 
     input()
     printer.print_explanation('as you can see, the class methods span across instances')
+
+    input()
+    printer.print_explanation('In python there is no real private variable, but we can try, \n'
+                              ' let\'s create an a test3 instance \n')
+    printer.print_code('test3 = Test() \n')
+    test3 = Test()
+
+    printer.print_explanation('lets try accessing our private variable: _private_instance_variable: \n')
+    printer.print_runtime(f'test1._private_instance_variable: {test1._private_instance_variable}')
+
+    printer.print_explanation('as you can see, it\'s not really blocked, \n'
+                              'just a matter of conventions, the best way to handle it is \n'
+                              'by using getters and setter \n')
+
+    printer.print_code('@property \n'
+                       'def private_instance_variable(self): \n'
+                       '    return self._private_instance_variable \n \n'
+
+                       '@private_instance_variable.setter \n'
+                       'def private_instance_variable(self, value): \n'
+                       '    self._private_instance_variable = value * 2 \n'
+
+                       '@private_instance_variable.deleter \n'
+                       'def private_instance_variable(self): \n'
+                       '    del self._private_instance_variable) \n')
+
+    printer.print_explanation('no let\'s look at the usage of these properties \n')
+    printer.print_runtime(f'test1.private_instance_variable: {test1.private_instance_variable}')
+    printer.print_code('test1.private_instance_variable = 2')
+    printer.print_runtime(f'test1.private_instance_variable: {test1.private_instance_variable}')
+    printer.print_code('del test1.private_instance_variable')
+    printer.print_runtime(f'test1.private_instance_variable: {test1.private_instance_variable}')
