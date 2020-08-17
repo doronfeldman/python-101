@@ -52,9 +52,10 @@ def learn():
     input()
 
     condition = (1 == 1)
-    printer.print_runtime(f'The result: {"Condition is True" if condition else "Condition is False"}')
+    printer.print_runtime(f'The result: {"Condition is True" if condition else "Condition is False"} \n')
+
+    printer.print_explanation('antoher form of inline condition is: \n')
+    printer.print_code('result = 1 if True else 2 \n')
 
     result = 1 if True else 2
-    printer.print_explanation('antoher form of inline condition is: \n')
-    printer.print_code('result = 1 if True else 2')
     printer.print_runtime(f'result: {result}')
