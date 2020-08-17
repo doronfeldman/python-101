@@ -53,3 +53,8 @@ def learn():
 
     condition = (1 == 1)
     printer.print_runtime(f'The result: {"Condition is True" if condition else "Condition is False"}')
+
+    result = 1 if True else 2
+    printer.print_explanation('antoher form of inline condition is: \n')
+    printer.print_code('result = 1 if True else 2')
+    printer.print_runtime(f'result: {result}')
