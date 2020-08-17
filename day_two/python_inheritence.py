@@ -1,3 +1,7 @@
+import json
+
+import constants
+from constants import target_constants
 from util import printer
 from abc import ABC, abstractmethod
 
@@ -5,6 +9,9 @@ from abc import ABC, abstractmethod
 class AbstractClass(ABC):
     @abstractmethod
     def do_something_else(self):
+        json.loads('{'
+                   '"a": "b"'
+                   '}')
         pass
 
 
