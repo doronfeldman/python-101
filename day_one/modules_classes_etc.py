@@ -106,8 +106,8 @@ def learn():
                        '    del self._private_instance_variable) \n')
 
     printer.print_explanation('no let\'s look at the usage of these properties \n')
-    printer.print_runtime(f'test1.private_instance_variable: {test1.private_instance_variable}')
-    printer.print_code('test1.private_instance_variable = 2')
-    printer.print_runtime(f'test1.private_instance_variable: {test1.private_instance_variable}')
-    printer.print_code('del test1.private_instance_variable')
-    printer.print_runtime(f'test1.private_instance_variable: {test1.private_instance_variable}')
+    printer.print_runtime(f'test1.private_instance_variable: {test1.private_instance_variable} \n\n')
+    printer.print_code('test1.private_instance_variable = 2 \n')
+    printer.print_runtime(f'test1.private_instance_variable: {test1.private_instance_variable} \n\n')
+    printer.print_code('del test1.private_instance_variable \n')
+    printer.print_runtime(f'test1.private_instance_variable: {test1.private_instance_variable} \n\n')
