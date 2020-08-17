@@ -60,7 +60,7 @@ def learn():
     printer.print_code('test1.class_method() \n'
                        'test1.instance_method() \n')
 
-    printer.print_explanation('by the way, est1.class_method() == Test.class_method() \n')
+    printer.print_explanation('by the way, test1.class_method() == Test.class_method() \n')
     test1.class_method()
     test1.instance_method()
 
