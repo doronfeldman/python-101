@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 from util import printer
 from day_one import naming_conventions, modules_classes_etc, conditions, loops_iterators_generators, lambdas_map_filter
 from day_two import by_ref_by_val, slice_notation, python_inheritence
